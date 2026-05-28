@@ -17,6 +17,7 @@ If you are setting this up on a brand new Windows computer, you need to install 
    sudo apt update
    sudo apt install make gcc-arm-none-eabi python3
    ```
+4. **Clone the Repository:** You should keep your AM32 repository inside a normal **Windows folder** (like your Documents or a Scratch folder). You do *not* need to move it inside the Linux filesystem. When you run `wsl make` from PowerShell, WSL automatically reaches into your Windows folders to compile the code!
 
 ## 2. Defining a Custom Target
 
