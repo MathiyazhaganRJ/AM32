@@ -12,12 +12,17 @@ If you are setting this up on a brand new Windows computer, you need to install 
    wsl --install
    ```
    *(Restart your computer if prompted).*
-3. **Install the ARM Compiler:** Open your terminal, type `wsl` to enter Linux, and run:
+3. **Install Base Linux Tools:** Open your terminal, type `wsl` to enter Linux, and run:
    ```bash
    sudo apt update
-   sudo apt install make gcc-arm-none-eabi python3
+   sudo apt install make wget tar python3
    ```
-4. **Clone the Repository:** You should keep your AM32 repository inside a normal **Windows folder** (like your Documents or a Scratch folder). You do *not* need to move it inside the Linux filesystem. When you run `wsl make` from PowerShell, WSL automatically reaches into your Windows folders to compile the code!
+4. **Clone the Repository:** You should keep your AM32 repository inside a normal **Windows folder** (like your Documents or a Scratch folder). You do *not* need to move it inside the Linux filesystem. When you run `wsl` commands from PowerShell, WSL automatically reaches into your Windows folders!
+5. **Download the AM32 ARM Compiler:** The AM32 project requires a specific ARM compiler. Open PowerShell inside your downloaded AM32 folder and run:
+   ```powershell
+   wsl make arm_sdk_install
+   ```
+   *(This will download a ~400MB file and extract it into a `tools/` folder inside the repository).*
 
 ## 2. Defining a Custom Target
 
