@@ -251,6 +251,32 @@
 #define DEAD_TIME               80
 #define HARDWARE_GROUP_L4_A
 #define COMP_ORDER_L4_A_045
+#define TARGET_VOLTAGE_DIVIDER  77     // CHANGED: 100k top + 15k bottom
+#define USE_SERIAL_TELEMETRY
+#define RAMP_SPEED_LOW_RPM 1
+#define RAMP_SPEED_HIGH_RPM 1
+#define MILLIVOLT_PER_AMP       50     // ADDED: 1mohm shunt + gain 50
+#endif
+
+#ifdef  REF_L431_KARSHAK
+#define FILE_NAME				"REF_L431_KARSHAK"
+#define FIRMWARE_NAME           "L431 KARSHAK"
+#define DEAD_TIME               80
+#define HARDWARE_GROUP_L4_A
+#define COMP_ORDER_L4_A_045
+#define TARGET_VOLTAGE_DIVIDER  79
+#define USE_SERIAL_TELEMETRY
+#define RAMP_SPEED_LOW_RPM 1
+#define RAMP_SPEED_HIGH_RPM 1
+#define MILLIVOLT_PER_AMP       50
+#endif
+
+#ifdef  CUSTOM_L431
+#define FILE_NAME				"CUSTOM_L431"
+#define FIRMWARE_NAME           "CUSTOM L431"
+#define DEAD_TIME               80
+#define HARDWARE_GROUP_L4_A
+#define CUSTOM_COMP_ORDER
 #define TARGET_VOLTAGE_DIVIDER  260
 #define USE_SERIAL_TELEMETRY
 #define RAMP_SPEED_LOW_RPM 1
@@ -4741,6 +4767,12 @@
 #define PHASE_A_COMP  LL_COMP_INPUT_MINUS_IO5  // pa5  /// THIS CONFIG FOR T-MOTOR
 #define PHASE_B_COMP  LL_COMP_INPUT_MINUS_IO4  // pa4
 #define PHASE_C_COMP  LL_COMP_INPUT_MINUS_IO3  // pa0
+#endif
+
+#ifdef CUSTOM_COMP_ORDER
+#define PHASE_A_COMP  LL_COMP_INPUT_MINUS_IO2  // pb7
+#define PHASE_B_COMP  LL_COMP_INPUT_MINUS_IO5  // pa4
+#define PHASE_C_COMP  LL_COMP_INPUT_MINUS_IO4  // pa5
 #endif
 
 #define COMMON_COMP LL_COMP_INPUT_PLUS_IO3
